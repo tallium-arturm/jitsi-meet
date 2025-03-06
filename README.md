@@ -10,7 +10,7 @@ video conferencing platforms with state-of-the-art video quality and features.
 </p>
 
 <hr />
-
+ 
 Amongst others here are the main features Jitsi Meet offers:
 
 * Support for all current browsers
