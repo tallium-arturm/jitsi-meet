@@ -54,6 +54,12 @@ public class JitsiMeetActivity extends AppCompatActivity
     private static final String ACTION_JITSI_MEET_CONFERENCE = "org.jitsi.meet.CONFERENCE";
     private static final String JITSI_MEET_CONFERENCE_OPTIONS = "JitsiMeetConferenceOptions";
 
+    private static JitsiMeetActivity instance = null;
+
+    public static JitsiMeetActivity getInstance() {
+        return instance;
+    }
+
     private boolean isReadyToClose;
 
     private final BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
@@ -106,6 +112,8 @@ public class JitsiMeetActivity extends AppCompatActivity
         this.jitsiView = findViewById(R.id.jitsiView);
 
         registerForBroadcastMessages();
+
+        instance = this;
 
         if (!extraInitialize()) {
             initialize();
@@ -168,7 +176,7 @@ public class JitsiMeetActivity extends AppCompatActivity
     // Helper methods
     //
 
-    protected JitsiMeetView getJitsiView() {
+    public JitsiMeetView getJitsiView() {
         return jitsiView;
     }
 
